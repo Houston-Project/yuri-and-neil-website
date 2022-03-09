@@ -7,12 +7,13 @@ import initClientsAnimation from '$animations/clients'
 import { initConstellationAimation } from '$animations/constellation'
 import initHeroAnimation from '$animations/hero'
 import initButtonComponents from '$components/button'
-import removeWebflowBadge from '$utils/removeWebflowBadge'
+import appHeight from '$utils/appHeight'
 
 gsap.registerPlugin(ScrollTrigger, MotionPathPlugin, DrawSVGPlugin)
 
 function main() {
-  removeWebflowBadge()
+  // HELPERS
+  appHeight()
 
   // ANIMATIONS
   initHeroAnimation()
