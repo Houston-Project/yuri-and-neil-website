@@ -7,7 +7,7 @@
     "rootDir": "./src" /* Specify the root directory of input files. Use to control the output directory structure with --outDir. */,
     "removeComments": true /* Do not emit comments to output. */,
     "downlevelIteration": true /* Provide full support for iterables in 'for-of', spread, and destructuring when targeting 'ES5' or 'ES3'. */,
-
+    "moduleResolution": "Node" /* Import with ES6 modules */,
     /* Strict Type-Checking Options */
     "strict": true /* Enable all strict type-checking options. */,
 
@@ -17,7 +17,9 @@
     /* Module Resolution Options */
     "baseUrl": "./" /* Base directory to resolve non-absolute module names. */,
     "paths": {
-      "$utils/*": ["src/utils/*"]
+      "$utils/*": ["src/utils/*"],
+      "$animations/*": ["src/animations/*"],
+      "$components/*": ["src/components/*"]
     },
     /* A series of entries which re-map imports to lookup locations relative to the 'baseUrl'. */
     "esModuleInterop": true /* Enables emit interoperability between CommonJS and ES Modules via creation of namespace objects for all imports. Implies 'allowSyntheticDefaultImports'. */,
