@@ -23,4 +23,4 @@ function main() {
   initButtonComponents()
 }
 
-document.addEventListener('DOMContentLoaded', main)
+main()
