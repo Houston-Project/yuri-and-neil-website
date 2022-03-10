@@ -1,5 +1,4 @@
 import { gsap } from 'gsap'
-import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin'
 import { MotionPathPlugin } from 'gsap/MotionPathPlugin'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
@@ -9,7 +8,7 @@ import initHeroAnimation from '$animations/hero'
 import initButtonComponents from '$components/button'
 import appHeight from '$utils/appHeight'
 
-gsap.registerPlugin(ScrollTrigger, MotionPathPlugin, DrawSVGPlugin)
+gsap.registerPlugin(ScrollTrigger, MotionPathPlugin)
 
 function main() {
   // HELPERS
@@ -17,8 +16,6 @@ function main() {
 
   // ANIMATIONS
   initHeroAnimation()
-  window.addEventListener('resize', initHeroAnimation)
-
   initClientsAnimation()
   initConstellationAimation()
 
