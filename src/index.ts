@@ -17,6 +17,8 @@ function main() {
 
   // ANIMATIONS
   initHeroAnimation()
+  window.addEventListener('resize', initHeroAnimation)
+
   initClientsAnimation()
   initConstellationAimation()
 
