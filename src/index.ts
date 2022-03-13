@@ -8,19 +8,25 @@ import initHeroAnimation from '$animations/hero'
 import initButtonComponents from '$components/button'
 import appHeight from '$utils/appHeight'
 
-gsap.registerPlugin(ScrollTrigger, MotionPathPlugin)
+import { DrawSVGPlugin } from './plugins/DrawSVGPlugin.js'
+
+gsap.registerPlugin(ScrollTrigger, MotionPathPlugin, DrawSVGPlugin)
+
+const page = window.location.pathname
 
 function main() {
+  // COMPONENTS
+  initButtonComponents()
+
   // HELPERS
   appHeight()
 
-  // ANIMATIONS
-  initHeroAnimation()
-  initClientsAnimation()
-  initConstellationAimation()
-
-  // COMPONENTS
-  initButtonComponents()
+  if (page === '/') {
+    // ANIMATIONS
+    initHeroAnimation()
+    initClientsAnimation()
+    initConstellationAimation()
+  }
 }
 
 main()

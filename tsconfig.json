@@ -10,6 +10,7 @@
     "moduleResolution": "Node" /* Import with ES6 modules */,
     /* Strict Type-Checking Options */
     "strict": true /* Enable all strict type-checking options. */,
+    "allowJs": true,
 
     /* Additional Checks */
     "noUncheckedIndexedAccess": true /* Include 'undefined' in index signature results */,

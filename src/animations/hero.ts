@@ -11,7 +11,16 @@ export default function initHeroAnimation() {
   const heroSection = document.querySelector('.hero-section') as HTMLElement
   const hero = heroSection.querySelector('.hero-section_wrapper') as HTMLDivElement
 
+  // if() {
+  //   return
+  // }
+
   addMarginTopToVoid(voidWrapper, heroSection)
+
+  window.addEventListener('resize', () => {
+    addMarginTopToVoid(voidWrapper, heroSection)
+  })
+
   fadeHero(hero)
 
   const { tl: rippleAniamtion, fade } = ripple()
@@ -41,6 +50,7 @@ export default function initHeroAnimation() {
     scrub: true,
     // markers: true,
     animation,
+    invalidateOnRefresh: true,
     onEnter: () => {
       rippleAniamtion.pause()
       fade()
