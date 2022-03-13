@@ -11,10 +11,6 @@ export default function initHeroAnimation() {
   const heroSection = document.querySelector('.hero-section') as HTMLElement
   const hero = heroSection.querySelector('.hero-section_wrapper') as HTMLDivElement
 
-  // if() {
-  //   return
-  // }
-
   addMarginTopToVoid(voidWrapper, heroSection)
 
   window.addEventListener('resize', () => {
