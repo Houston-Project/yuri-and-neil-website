@@ -1,7 +1,7 @@
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
-export function initConstellationAimation() {
+export default function initConstellationAimation() {
   const wrapper = document.querySelector('.constellation-component') as HTMLDivElement
 
   const path = wrapper.querySelector('.constellation-path path') as SVGPathElement

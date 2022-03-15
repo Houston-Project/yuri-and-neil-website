@@ -2,8 +2,9 @@ import { gsap } from 'gsap'
 import { MotionPathPlugin } from 'gsap/MotionPathPlugin'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
+import initBoardingAnimation from '$animations/boarding.js'
 import initClientsAnimation from '$animations/clients'
-import { initConstellationAimation } from '$animations/constellation'
+import initConstellationAimation from '$animations/constellation'
 import initHeroAnimation from '$animations/hero'
 import initButtonComponents from '$components/button'
 import appHeight from '$utils/appHeight'
@@ -26,6 +27,12 @@ function main() {
     initHeroAnimation()
     initClientsAnimation()
     initConstellationAimation()
+
+    initBoardingAnimation()
+
+    window.addEventListener('resize', () => {
+      initBoardingAnimation()
+    })
   }
 }
 
