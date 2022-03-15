@@ -2,14 +2,8 @@ import { gsap } from 'gsap'
 
 import { isTouchScreen } from '$utils/isTouchScreen'
 
-function createBoardingAnimation() {
-  const wrapper = document.querySelector('.boarding-wrapper') as HTMLDivElement
-  const link = document.querySelector('.boarding_link') as HTMLAnchorElement
-  const arrow = wrapper.querySelector('.boarding_arrow') as HTMLDivElement
-  const text = wrapper.querySelector('.boardind_circled-text') as HTMLImageElement
-  const star = wrapper.querySelector('.boarding_star') as HTMLImageElement
-  const asteroid = wrapper.querySelector('.boarding_asteroid') as HTMLImageElement
-
+function addTextAnimation() {
+  const text = document.querySelector('.boarding-wrapper .boardind_circled-text') as HTMLImageElement
   // Infinite rotation for text
   gsap.fromTo(
     text,
@@ -24,6 +18,14 @@ function createBoardingAnimation() {
       repeat: -1,
     }
   )
+}
+
+function createBoardingAnimation() {
+  const wrapper = document.querySelector('.boarding-wrapper') as HTMLDivElement
+  const link = document.querySelector('.boarding_link') as HTMLAnchorElement
+  const arrow = wrapper.querySelector('.boarding_arrow') as HTMLDivElement
+  const star = wrapper.querySelector('.boarding_star') as HTMLImageElement
+  const asteroid = wrapper.querySelector('.boarding_asteroid') as HTMLImageElement
 
   // Move things
   let degrees = 0
@@ -93,7 +95,12 @@ function createBoardingAnimation() {
 }
 
 let clear: undefined | (() => void) = undefined
+let textAnimationIsPlaying = false
 export default function initBoardingAnimation() {
+  // Start text animation only once
+  !textAnimationIsPlaying && addTextAnimation()
+  textAnimationIsPlaying = true
+
   if (isTouchScreen()) {
     clear?.()
     clear = undefined
