@@ -38,7 +38,7 @@ const getYDistanceInPercent = (el: HTMLElement, mod: number) => {
 }
 
 function animation(wrapper: HTMLDivElement, circles: HTMLDivElement[]) {
-  const title = wrapper.querySelector('.clients-title svg') as HTMLDivElement
+  const title = wrapper.querySelector('.clients-title_svg') as HTMLImageElement
   const logos = [...wrapper.querySelectorAll<HTMLDivElement>('.client-logo')]
 
   const logosDistances = logos.map((logo, index) => {
