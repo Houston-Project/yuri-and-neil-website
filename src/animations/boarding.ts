@@ -1,23 +1,43 @@
 import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 import { isTouchScreen } from '$utils/isTouchScreen'
 
 function addTextAnimation() {
   const text = document.querySelector('.boarding-wrapper .boardind_circled-text') as HTMLImageElement
   // Infinite rotation for text
-  gsap.fromTo(
+  const animation = gsap.fromTo(
     text,
     {
       rotate: -180,
       transformOrigin: 'center',
     },
     {
+      paused: true,
       ease: 'linear',
       duration: 20,
       rotate: 180,
       repeat: -1,
     }
   )
+
+  ScrollTrigger.create({
+    trigger: text,
+    start: '0% 100%',
+    end: '100% 0%',
+    onEnter: () => {
+      animation.play()
+    },
+    onLeave: () => {
+      animation.pause()
+    },
+    onEnterBack: () => {
+      animation.play()
+    },
+    onLeaveBack: () => {
+      animation.pause()
+    },
+  })
 }
 
 function createBoardingAnimation() {
