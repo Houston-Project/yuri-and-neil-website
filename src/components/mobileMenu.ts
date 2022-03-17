@@ -8,11 +8,11 @@ export default function initMobileMenuComponent() {
   const links = [...menu.querySelectorAll<HTMLAnchorElement>('.mobile-nav_middle a')]
 
   function stopScrolling() {
-    gsap.set('.page-wrapper', { overflowY: 'hidden' })
+    gsap.set('body', { overflowY: 'hidden' })
   }
 
   function allowScrolling() {
-    gsap.set('.page-wrapper', { overflowY: 'unset' })
+    gsap.set('body', { overflowY: 'unset' })
   }
 
   const openAction = () => {
