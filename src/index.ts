@@ -2,12 +2,13 @@ import { gsap } from 'gsap'
 import { MotionPathPlugin } from 'gsap/MotionPathPlugin'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
-import initBoardingAnimation from '$animations/boarding.js'
+import initBoardingAnimation from '$animations/boarding'
 import initClientsAnimation from '$animations/clients'
 import initConstellationAimation from '$animations/constellation'
 import initGalaxiesAnimation from '$animations/galaxies'
 import initHeroAnimation from '$animations/hero'
 import initButtonComponents from '$components/button'
+import initMobileMenuComponent from '$components/mobileMenu'
 import appHeight from '$utils/appHeight'
 
 import { DrawSVGPlugin } from './plugins/DrawSVGPlugin.js'
@@ -19,6 +20,7 @@ const page = window.location.pathname
 function main() {
   // COMPONENTS
   initButtonComponents()
+  initMobileMenuComponent()
 
   // HELPERS
   appHeight()
