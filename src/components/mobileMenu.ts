@@ -1,3 +1,5 @@
+import { gsap } from 'gsap'
+
 export default function initMobileMenuComponent() {
   // const pageWrapper = document.querySelector('.page-wrapper') as HTMLDivElement
 
@@ -7,41 +9,26 @@ export default function initMobileMenuComponent() {
 
   const links = [...menu.querySelectorAll<HTMLAnchorElement>('.mobile-nav_middle a')]
 
-  // const openAction = () => {
-  //   menu.style.display = 'flex'
-  //   pageWrapper.style.overflow = 'hidden'
-  //   pageWrapper.style.height = '100vh'
-  // }
-  // const closeAction = () => {
-  //   menu.style.display = 'none'
-  //   pageWrapper.style.overflow = 'unset'
-  //   pageWrapper.style.height = 'auto'
-  // }
-
-  const { body } = document
-
-  const closeDialog = () => {
-    const scrollY = body.style.top
-    body.style.position = ''
-    body.style.top = ''
-    window.scrollTo(0, parseInt(scrollY || '0') * -1)
-    menu.style.display = 'none'
+  function stopScrolling() {
+    gsap.set('body', { overflowY: 'hidden' })
   }
 
-  const showDialog = () => {
+  function allowScrolling() {
+    gsap.set('body', { overflowY: 'unset' })
+  }
+
+  const openAction = () => {
     menu.style.display = 'flex'
-    const scrollY = document.documentElement.style.getPropertyValue('--scroll-y')
-    body.style.position = 'fixed'
-    body.style.top = `-${scrollY}`
+    stopScrolling()
+  }
+  const closeAction = () => {
+    menu.style.display = 'none'
+    allowScrolling()
   }
 
-  openButton.addEventListener('click', showDialog)
-  closeButton.addEventListener('click', closeDialog)
+  openButton.addEventListener('click', openAction)
+  closeButton.addEventListener('click', closeAction)
   links.forEach((link) => {
-    link.addEventListener('click', closeDialog)
-  })
-
-  window.addEventListener('scroll', () => {
-    document.documentElement.style.setProperty('--scroll-y', `${window.scrollY}px`)
+    link.addEventListener('click', closeAction)
   })
 }
