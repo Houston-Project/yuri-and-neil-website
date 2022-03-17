@@ -1,7 +1,14 @@
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
+import { maxWidth } from '$utils/matchMedia'
+
 export default function initClientsAnimation() {
+  // Don't create fancy animation on mobile
+  if (maxWidth('Tablet')) {
+    return
+  }
+
   const wrapper = document.querySelector('.clients-wrapper') as HTMLDivElement
   const circles = [...wrapper.querySelectorAll<HTMLDivElement>('.clients-circle')]
 

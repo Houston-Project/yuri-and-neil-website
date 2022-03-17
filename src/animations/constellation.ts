@@ -1,7 +1,14 @@
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
+import { maxWidth } from '$utils/matchMedia'
+
 export default function initConstellationAimation() {
+  // Don't create fancy animation on mobile
+  if (maxWidth('Tablet')) {
+    return
+  }
+
   const wrapper = document.querySelector('.constellation-component') as HTMLDivElement
 
   const path = wrapper.querySelector('.constellation-path path') as SVGPathElement

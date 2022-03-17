@@ -37,6 +37,7 @@ function addTextAnimation() {
     onLeaveBack: () => {
       animation.pause()
     },
+    invalidateOnRefresh: true,
   })
 }
 
