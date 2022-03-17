@@ -8,11 +8,11 @@ export default function initMobileMenuComponent() {
   const links = [...menu.querySelectorAll<HTMLAnchorElement>('.mobile-nav_middle a')]
 
   function stopScrolling() {
-    gsap.set('body', { overflowY: 'hidden' })
+    gsap.set('body', { overflowY: 'hidden', touchAction: 'none' })
   }
 
   function allowScrolling() {
-    gsap.set('body', { overflowY: 'unset' })
+    gsap.set('body', { overflowY: 'unset', touchAction: 'unset' })
   }
 
   const openAction = () => {
@@ -24,8 +24,13 @@ export default function initMobileMenuComponent() {
     allowScrolling()
   }
 
-  openButton.addEventListener('click', openAction)
-  closeButton.addEventListener('click', closeAction)
+  openButton.addEventListener('click', openAction, {
+    capture: true,
+  })
+  closeButton.addEventListener('click', closeAction, {
+    capture: true,
+  })
+
   links.forEach((link) => {
     link.addEventListener('click', closeAction)
   })
