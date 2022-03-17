@@ -1,8 +1,6 @@
 import { gsap } from 'gsap'
 
 export default function initMobileMenuComponent() {
-  // const pageWrapper = document.querySelector('.page-wrapper') as HTMLDivElement
-
   const menu = document.querySelector('.mobile-nav') as HTMLDivElement
   const openButton = document.querySelector('.mobile-menu-button-icon button.mobile-menu-button') as HTMLButtonElement
   const closeButton = menu.querySelector('.mobile-nav_top_button') as HTMLButtonElement
@@ -10,11 +8,11 @@ export default function initMobileMenuComponent() {
   const links = [...menu.querySelectorAll<HTMLAnchorElement>('.mobile-nav_middle a')]
 
   function stopScrolling() {
-    gsap.set('body', { overflowY: 'hidden' })
+    gsap.set('.page-wrapper', { overflowY: 'hidden' })
   }
 
   function allowScrolling() {
-    gsap.set('body', { overflowY: 'unset' })
+    gsap.set('.page-wrapper', { overflowY: 'unset' })
   }
 
   const openAction = () => {
