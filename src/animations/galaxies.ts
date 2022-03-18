@@ -48,6 +48,7 @@ export default function initGalaxiesAnimation() {
       start: '10% 100%',
       end: '0% 50%',
       scrub: true,
+      markers: true,
     })
   })
 }
