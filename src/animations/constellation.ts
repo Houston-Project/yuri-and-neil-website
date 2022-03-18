@@ -10,7 +10,9 @@ export default function initConstellationAimation() {
     ...document.querySelectorAll<HTMLDivElement>('.constellation-modals .constellation-modal'),
   ]
 
-  items.forEach((item, index) => {
+  const mobileItems = [...document.querySelectorAll<HTMLDivElement>('.mobile-constellation .mobile-constellation_item')]
+
+  const createModalForConstellations = (item: HTMLDivElement, index: number) => {
     const modal = constellationModals[index]
     if (!modal) return
 
@@ -24,7 +26,10 @@ export default function initConstellationAimation() {
       modal.style.display = 'block'
       openModal(modal)
     })
-  })
+  }
+
+  mobileItems.forEach(createModalForConstellations)
+  items.forEach(createModalForConstellations)
 
   // Don't create fancy animation on mobile
   if (maxWidth('Tablet')) {
