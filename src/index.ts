@@ -31,11 +31,11 @@ function main() {
     createModalComponent()
 
     // ANIMATIONS
+    initGalaxiesAnimation()
     initHeroAnimation()
     initClientsAnimation()
     initConstellationAimation()
     initBoardingAnimation()
-    initGalaxiesAnimation()
 
     window.addEventListener('resize', () => {
       initBoardingAnimation()
