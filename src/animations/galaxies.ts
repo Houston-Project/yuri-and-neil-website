@@ -46,7 +46,7 @@ export default function initGalaxiesAnimation() {
     ScrollTrigger.create({
       trigger: item,
       animation: animation(item, circle),
-      // invalidateOnRefresh: true,
+      invalidateOnRefresh: true,
       start: '10% 100%',
       end: '0% 50%',
       scrub: 0.2,
