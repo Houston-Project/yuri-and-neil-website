@@ -1,9 +1,13 @@
-import { gsap } from 'gsap'
+import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
 
 export function stopScrolling() {
-  gsap.set('body', { overflowY: 'hidden', touchAction: 'none' })
+  const modal = document.querySelector<HTMLDivElement>('.js-modal')
+  if (!modal) return
+  disableBodyScroll(modal)
 }
 
 export function allowScrolling() {
-  gsap.set('body', { overflowY: 'unset', touchAction: 'unset' })
+  const modal = document.querySelector<HTMLDivElement>('.js-modal')
+  if (!modal) return
+  enableBodyScroll(modal)
 }
