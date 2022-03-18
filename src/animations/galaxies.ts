@@ -36,7 +36,7 @@ export default function initGalaxiesAnimation() {
         end: 0.5,
       },
       ease: 'power1.out',
-      immediateRender: true,
+      // immediateRender: true,
     })
   }
 
