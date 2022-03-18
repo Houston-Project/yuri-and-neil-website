@@ -36,21 +36,20 @@ export default function initGalaxiesAnimation() {
         end: 0.5,
       },
       ease: 'power1.out',
-      immediateRender: true,
     })
   }
 
   items.forEach((item) => {
     const circle = item.querySelector('.galaxies-component_circle') as HTMLDivElement
-    // const path = item.querySelector('.galaxies-component_path path') as SVGPathElement
-    // gsap.set(circle, {
-    //   motionPath: {
-    //     path: path,
-    //     align: path,
-    //     alignOrigin: [0.5, 0.5],
-    //   },
-    //   immediateRender: true,
-    // })
+    const path = item.querySelector('.galaxies-component_path path') as SVGPathElement
+    gsap.set(circle, {
+      motionPath: {
+        path: path,
+        align: path,
+        alignOrigin: [0.5, 0.5],
+      },
+      immediateRender: true,
+    })
     ScrollTrigger.create({
       trigger: item,
       animation: animation(item, circle),
@@ -58,7 +57,6 @@ export default function initGalaxiesAnimation() {
       start: '10% 100%',
       end: '0% 50%',
       scrub: 0.2,
-      immediateRender: true,
       markers: true,
     })
   })
