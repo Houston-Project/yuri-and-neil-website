@@ -50,6 +50,7 @@ export default function initGalaxiesAnimation() {
       start: '10% 100%',
       end: '0% 50%',
       scrub: 0.2,
+      immediateRender: true,
     })
   })
 }
