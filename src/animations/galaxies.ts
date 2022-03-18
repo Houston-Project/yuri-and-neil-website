@@ -41,9 +41,10 @@ export default function initGalaxiesAnimation() {
 
   items.forEach((item) => {
     const circle = item.querySelector('.galaxies-component_circle') as HTMLDivElement
+    const img = item.querySelector('img') as HTMLImageElement
 
     ScrollTrigger.create({
-      trigger: item,
+      trigger: img,
       animation: animation(item, circle),
       start: '10% 100%',
       end: '0% 50%',
