@@ -9,6 +9,7 @@ import initGalaxiesAnimation from '$animations/galaxies'
 import initHeroAnimation from '$animations/hero'
 import initButtonComponents from '$components/button'
 import initMobileMenuComponent from '$components/mobileMenu'
+import createModalComponent from '$components/modal.js'
 import appHeight from '$utils/appHeight'
 
 import { DrawSVGPlugin } from './plugins/DrawSVGPlugin.js'
@@ -26,6 +27,9 @@ function main() {
   appHeight()
 
   if (page === '/') {
+    // COMPONENTS
+    createModalComponent()
+
     // ANIMATIONS
     initHeroAnimation()
     initClientsAnimation()

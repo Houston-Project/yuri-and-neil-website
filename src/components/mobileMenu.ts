@@ -1,4 +1,4 @@
-import { gsap } from 'gsap'
+import { allowScrolling, stopScrolling } from '$utils/scroll'
 
 export default function initMobileMenuComponent() {
   const menu = document.querySelector('.mobile-nav') as HTMLDivElement
@@ -6,14 +6,6 @@ export default function initMobileMenuComponent() {
   const closeButton = menu.querySelector('.mobile-nav_top_button') as HTMLButtonElement
 
   const links = [...menu.querySelectorAll<HTMLAnchorElement>('.mobile-nav_middle a')]
-
-  function stopScrolling() {
-    gsap.set('body', { overflowY: 'hidden', touchAction: 'none' })
-  }
-
-  function allowScrolling() {
-    gsap.set('body', { overflowY: 'unset', touchAction: 'unset' })
-  }
 
   const openAction = () => {
     menu.style.display = 'flex'

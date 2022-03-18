@@ -1,9 +1,31 @@
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
+import { closeModal, openModal } from '$components/modal'
 import { maxWidth } from '$utils/matchMedia'
 
 export default function initConstellationAimation() {
+  const items = [...document.querySelectorAll<HTMLDivElement>('.constellation-logos_wrapper .constellation-logo')]
+  const constellationModals = [
+    ...document.querySelectorAll<HTMLDivElement>('.constellation-modals .constellation-modal'),
+  ]
+
+  items.forEach((item, index) => {
+    const modal = constellationModals[index]
+    if (!modal) return
+
+    const closeButton = modal.querySelector('button.invisble-button') as HTMLButtonElement
+    closeButton.addEventListener('click', () => {
+      modal.style.display = 'none'
+      closeModal()
+    })
+
+    item.addEventListener('click', () => {
+      modal.style.display = 'block'
+      openModal(modal)
+    })
+  })
+
   // Don't create fancy animation on mobile
   if (maxWidth('Tablet')) {
     return
