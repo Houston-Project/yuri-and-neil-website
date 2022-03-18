@@ -47,17 +47,20 @@ export default function initGalaxiesAnimation() {
         path: path,
         align: path,
         alignOrigin: [0.5, 0.5],
+        start: 0,
+        end: 0,
       },
       immediateRender: true,
     })
-    // ScrollTrigger.create({
-    //   trigger: item,
-    //   animation: animation(item, circle),
-    //   invalidateOnRefresh: true,
-    //   start: '10% 100%',
-    //   end: '0% 50%',
-    //   scrub: 0.2,
-    //   markers: true,
-    // })
+
+    ScrollTrigger.create({
+      trigger: item,
+      animation: animation(item, circle),
+      invalidateOnRefresh: true,
+      start: '10% 100%',
+      end: '0% 50%',
+      scrub: 0.2,
+      markers: true,
+    })
   })
 }
