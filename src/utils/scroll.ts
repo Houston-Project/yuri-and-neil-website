@@ -5,7 +5,7 @@ const options: BodyScrollOptions = {
 }
 
 export function stopScrolling() {
-  const modal = document.querySelector<HTMLDivElement>('.js-modal')
+  const modal = document.querySelector<HTMLDivElement>('.js-modal-inner')
   if (!modal) return
   disableBodyScroll(modal, options)
 }
