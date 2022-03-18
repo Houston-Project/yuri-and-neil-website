@@ -12,25 +12,36 @@ export default function createModalComponent() {
   modal.style.height = 'var(--app-height)'
   modal.style.display = 'none'
   modal.style.zIndex = '99999'
-  modal.style.overflowY = 'scroll'
+  modal.style.overflow = 'none'
+  modal.style.backgroundColor = '#0D0C0B'
+
+  const innerModal = document.createElement('div')
+  innerModal.classList.add('js-modal-inner')
+  innerModal.style.width = '100%'
+  innerModal.style.height = '100%'
+  innerModal.style.overflowY = 'scroll'
+
+  modal.appendChild(innerModal)
 
   document.body.appendChild(modal)
 }
 
 export function openModal(children: HTMLElement) {
   const modal = document.querySelector('.js-modal') as HTMLDivElement
+  const innerModal = document.querySelector('.js-modal-inner') as HTMLDivElement
 
   modal.style.display = 'block'
 
-  modal.appendChild(children)
+  innerModal.appendChild(children)
   stopScrolling()
 }
 
 export function closeModal() {
   const modal = document.querySelector('.js-modal') as HTMLDivElement
+  const innerModal = document.querySelector('.js-modal-inner') as HTMLDivElement
 
   modal.style.display = 'none'
 
-  modal.innerHTML = ''
+  innerModal.innerHTML = ''
   allowScrolling()
 }
