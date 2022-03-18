@@ -7,6 +7,7 @@ import initClientsAnimation from '$animations/clients'
 import initConstellationAimation from '$animations/constellation'
 import initGalaxiesAnimation from '$animations/galaxies'
 import initHeroAnimation from '$animations/hero'
+import initTunnelAnimation from '$animations/tunnel.js'
 import initButtonComponents from '$components/button'
 import initMobileMenuComponent from '$components/mobileMenu'
 import createModalComponent from '$components/modal'
@@ -35,6 +36,7 @@ function main() {
     initClientsAnimation()
     initConstellationAimation()
     initBoardingAnimation()
+    initTunnelAnimation()
     initGalaxiesAnimation()
 
     window.addEventListener('resize', () => {
