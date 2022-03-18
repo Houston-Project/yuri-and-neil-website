@@ -9,7 +9,7 @@ import initGalaxiesAnimation from '$animations/galaxies'
 import initHeroAnimation from '$animations/hero'
 import initButtonComponents from '$components/button'
 import initMobileMenuComponent from '$components/mobileMenu'
-import createModalComponent from '$components/modal.js'
+import createModalComponent from '$components/modal'
 import appHeight from '$utils/appHeight'
 
 import { DrawSVGPlugin } from './plugins/DrawSVGPlugin.js'
@@ -31,11 +31,11 @@ function main() {
     createModalComponent()
 
     // ANIMATIONS
-    initGalaxiesAnimation()
     initHeroAnimation()
     initClientsAnimation()
     initConstellationAimation()
     initBoardingAnimation()
+    initGalaxiesAnimation()
 
     window.addEventListener('resize', () => {
       initBoardingAnimation()
