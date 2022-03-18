@@ -41,23 +41,13 @@ export default function initGalaxiesAnimation() {
 
   items.forEach((item) => {
     const circle = item.querySelector('.galaxies-component_circle') as HTMLDivElement
-    const path = item.querySelector('.galaxies-component_path path') as SVGPathElement
-    gsap.set(circle, {
-      motionPath: {
-        path: path,
-        align: path,
-        alignOrigin: [0.5, 0.5],
-        start: 0,
-        end: 0,
-      },
-    })
 
     ScrollTrigger.create({
       trigger: item,
       animation: animation(item, circle),
       start: '10% 100%',
       end: '0% 50%',
-      scrub: 0.2,
+      scrub: true,
       markers: true,
     })
   })
