@@ -50,14 +50,14 @@ export default function initGalaxiesAnimation() {
       },
       immediateRender: true,
     })
-    ScrollTrigger.create({
-      trigger: item,
-      animation: animation(item, circle),
-      invalidateOnRefresh: true,
-      start: '10% 100%',
-      end: '0% 50%',
-      scrub: 0.2,
-      markers: true,
-    })
+    // ScrollTrigger.create({
+    //   trigger: item,
+    //   animation: animation(item, circle),
+    //   invalidateOnRefresh: true,
+    //   start: '10% 100%',
+    //   end: '0% 50%',
+    //   scrub: 0.2,
+    //   markers: true,
+    // })
   })
 }
