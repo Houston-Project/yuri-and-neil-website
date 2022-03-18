@@ -36,21 +36,17 @@ export default function initGalaxiesAnimation() {
         end: 0.5,
       },
       ease: 'power1.out',
-      // immediateRender: true,
+      immediateRender: true,
     })
   }
 
   items.forEach((item) => {
     const circle = item.querySelector('.galaxies-component_circle') as HTMLDivElement
 
-    // circle.addEventListener('mouseenter', () => {
-
-    // })
-
     ScrollTrigger.create({
       trigger: item,
       animation: animation(item, circle),
-      invalidateOnRefresh: true,
+      // invalidateOnRefresh: true,
       start: '10% 100%',
       end: '0% 50%',
       scrub: 0.2,
