@@ -26,9 +26,11 @@ export default function createModalComponent() {
   document.body.appendChild(modal)
 }
 
-export function openModal(children: HTMLElement) {
+export function openModal(children: HTMLElement, color: '#0D0C0B' | '#FFFEF5') {
   const modal = document.querySelector('.js-modal') as HTMLDivElement
   const innerModal = document.querySelector('.js-modal-inner') as HTMLDivElement
+
+  modal.style.backgroundColor = color
 
   modal.style.display = 'block'
 

@@ -22,7 +22,7 @@ export default function initGalaxiesAnimation() {
 
     circle.addEventListener('click', () => {
       modal.style.display = 'block'
-      openModal(modal)
+      openModal(modal, '#FFFEF5')
     })
   })
 

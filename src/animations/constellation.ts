@@ -24,7 +24,7 @@ export default function initConstellationAimation() {
 
     item.addEventListener('click', () => {
       modal.style.display = 'block'
-      openModal(modal)
+      openModal(modal, '#0D0C0B')
     })
   }
 
