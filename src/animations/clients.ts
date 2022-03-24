@@ -12,7 +12,7 @@ export default function initClientsAnimation() {
   const wrapper = document.querySelector('.clients-wrapper') as HTMLDivElement
   const circles = [...wrapper.querySelectorAll<HTMLDivElement>('.clients-circle')]
 
-  const height = window.innerHeight * circles.length
+  const height = window.innerHeight * (circles.length / 2.5)
 
   ScrollTrigger.create({
     trigger: wrapper,
@@ -87,7 +87,7 @@ function animation(wrapper: HTMLDivElement, circles: HTMLDivElement[]) {
         xPercent: -50,
         scale: 1.5,
         stagger: {
-          amount: 3.8,
+          amount: 3,
         },
         ease: 'linear',
       }
@@ -118,7 +118,7 @@ function animation(wrapper: HTMLDivElement, circles: HTMLDivElement[]) {
         xPercent: (index) => logosDistances[index]?.x || -50,
         yPercent: (index) => logosDistances[index]?.y || -50,
         stagger: {
-          amount: 2,
+          amount: 1.5,
         },
         ease: 'linear',
         duration: 0.8,

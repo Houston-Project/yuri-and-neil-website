@@ -75,22 +75,27 @@ export default function initConstellationAimation() {
         },
         delay: 0.1 * i,
       },
-      10
+      0
     )
   })
 
-  animation.fromTo(
-    texts,
-    {
-      opacity: 0,
-    },
-    {
-      opacity: 1,
-      stagger: {
-        amount: 1,
+  animation
+    .fromTo(
+      texts,
+      {
+        opacity: 0,
       },
-    }
-  )
+      {
+        opacity: 1,
+        stagger: {
+          amount: 1,
+        },
+      }
+    )
+    .to(texts, {
+      opacity: 1,
+      duration: 3,
+    })
 
   const height = window.innerHeight * 5
 
