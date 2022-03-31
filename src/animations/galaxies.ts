@@ -47,7 +47,7 @@ export default function initGalaxiesAnimation() {
       trigger: img,
       animation: animation(item, circle),
       start: '10% 100%',
-      end: '0% 50%',
+      end: '0% 70%',
       scrub: true,
     })
   })

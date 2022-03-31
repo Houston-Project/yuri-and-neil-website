@@ -4,7 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 export default function initTunnelAnimation() {
   const wrapper = document.querySelector('.tunnel-wrapper') as HTMLDivElement
   const circles = [...wrapper.querySelectorAll('.tunnel_circle')]
-  const height = window.innerHeight * 8
+  const height = window.innerHeight * 4
 
   const getXPercent = (index: number) => {
     if (index % 4 === 1) {

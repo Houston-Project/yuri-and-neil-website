@@ -12,6 +12,7 @@ import initButtonComponents from '$components/button'
 import initMobileMenuComponent from '$components/mobileMenu'
 import createModalComponent from '$components/modal'
 import appHeight from '$utils/appHeight'
+import disableCursorMixBlendMode from '$utils/disableCursorMixBlendMode.js'
 
 import { DrawSVGPlugin } from './plugins/DrawSVGPlugin.js'
 
@@ -35,9 +36,12 @@ function main() {
     initHeroAnimation()
     initClientsAnimation()
     initConstellationAimation()
-    initBoardingAnimation()
     initTunnelAnimation()
     initGalaxiesAnimation()
+    initBoardingAnimation()
+
+    // UTILS
+    disableCursorMixBlendMode()
 
     window.addEventListener('resize', () => {
       initBoardingAnimation()

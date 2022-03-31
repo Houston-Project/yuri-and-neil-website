@@ -51,7 +51,7 @@ export default function initConstellationAimation() {
     },
     {
       drawSVG: '100%',
-      duration: 10,
+      duration: 1,
     }
   )
 
@@ -68,43 +68,35 @@ export default function initConstellationAimation() {
         },
         transformOrigin: '50% 50%',
         immediateRender: true,
-        duration: 15,
+        duration: 1,
         // ease: 'linear',
         stagger: {
-          amount: 0.4,
+          amount: 0.1,
         },
-        delay: 0.1 * i,
+        delay: 0.04 * i,
       },
       0
     )
   })
 
-  animation
-    .fromTo(
-      texts,
-      {
-        opacity: 0,
-      },
-      {
-        opacity: 1,
-        stagger: {
-          amount: 1,
-        },
-      }
-    )
-    .to(texts, {
+  animation.fromTo(
+    texts,
+    {
+      opacity: 0,
+    },
+    {
       opacity: 1,
-      duration: 3,
-    })
-
-  const height = window.innerHeight * 5
+      duration: 0.2,
+      stagger: {
+        amount: 0.1,
+      },
+    }
+  )
 
   ScrollTrigger.create({
     trigger: wrapper,
-    end: `${height}px 0%`,
-    scrub: true,
-    pin: true,
+    start: '30% 90%',
     animation,
-    invalidateOnRefresh: true,
+    once: true,
   })
 }
