@@ -45,9 +45,7 @@ function main() {
     disableCursorMixBlendMode()
 
     window.addEventListener('resize', () => {
-      debounce(() => {
-        location.reload()
-      })
+      initBoardingAnimation()
     })
   }
 }
