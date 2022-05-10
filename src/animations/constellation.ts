@@ -44,16 +44,20 @@ export default function initConstellationAimation() {
   const logos = [...logosWrapper.querySelectorAll<HTMLDivElement>('.constellation-logo')]
   const texts = [...logosWrapper.querySelectorAll<HTMLDivElement>('.constellation-logo_title')]
 
-  const animation = gsap.timeline({}).fromTo(
-    path,
-    {
-      drawSVG: '0%',
-    },
-    {
-      drawSVG: '100%',
-      duration: 1,
-    }
-  )
+  const animation = gsap
+    .timeline({
+      paused: true,
+    })
+    .fromTo(
+      path,
+      {
+        drawSVG: '0%',
+      },
+      {
+        drawSVG: '100%',
+        duration: 1,
+      }
+    )
 
   logos.forEach((l, i) => {
     animation.to(
@@ -63,13 +67,11 @@ export default function initConstellationAimation() {
           path: path,
           align: path,
           alignOrigin: [0.5, 0.5],
-          // end: 1 - i * 0.098,
           end: 1 - i * (1 / logos.length),
         },
         transformOrigin: '50% 50%',
         immediateRender: true,
         duration: 1,
-        // ease: 'linear',
         stagger: {
           amount: 0.1,
         },
@@ -95,8 +97,11 @@ export default function initConstellationAimation() {
 
   ScrollTrigger.create({
     trigger: wrapper,
-    start: '30% 90%',
-    animation,
-    once: true,
+    start: '50% 50%',
+    end: '200% 100%',
+    onEnter: () => {
+      animation.play()
+    },
+    pin: true,
   })
 }

@@ -12,6 +12,7 @@ import initButtonComponents from '$components/button'
 import initMobileMenuComponent from '$components/mobileMenu'
 import createModalComponent from '$components/modal'
 import appHeight from '$utils/appHeight'
+import { debounce } from '$utils/debounce.js'
 import disableCursorMixBlendMode from '$utils/disableCursorMixBlendMode.js'
 
 import { DrawSVGPlugin } from './plugins/DrawSVGPlugin.js'
@@ -44,7 +45,9 @@ function main() {
     disableCursorMixBlendMode()
 
     window.addEventListener('resize', () => {
-      initBoardingAnimation()
+      debounce(() => {
+        location.reload()
+      })
     })
   }
 }
