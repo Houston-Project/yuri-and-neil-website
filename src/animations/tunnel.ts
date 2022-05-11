@@ -32,6 +32,7 @@ export default function initTunnelAnimation() {
     scrub: true,
     start: '50% 50%',
     end: `${height}px 100%`,
+    invalidateOnRefresh: true,
     animation: gsap.fromTo(
       circles,
       {
