@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
 import esbuild from 'esbuild'
+import copyStaticFiles from 'esbuild-copy-static-files'
 
 const buildDirectory = 'dist'
 const production = process.env.NODE_ENV === 'production'
@@ -18,6 +19,12 @@ const defaultSettings = {
   sourcemap: !production,
   target: production ? 'es6' : 'esnext',
   entryPoints,
+  plugins: [
+    copyStaticFiles({
+      src: './static',
+      dest: './dist/public',
+    }),
+  ],
 }
 
 // Files building
