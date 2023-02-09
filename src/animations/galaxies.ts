@@ -1,30 +1,30 @@
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
-import { closeModal, openModal } from '$components/modal'
+// import { closeModal, openModal } from '$components/modal'
 
 export default function initGalaxiesAnimation() {
   const wrapper = document.querySelector('.galaxies-component') as HTMLDivElement
   const items = [...wrapper.querySelectorAll<HTMLDivElement>('.galaxies-component_item')]
-  const galaxieModals = [...document.querySelectorAll<HTMLDivElement>('.galaxies-modals .galaxie-modal')]
+  // const galaxieModals = [...document.querySelectorAll<HTMLDivElement>('.galaxies-modals .galaxie-modal')]
 
-  items.forEach((item, index) => {
-    const modal = galaxieModals[index]
-    if (!modal) return
+  // items.forEach((item, index) => {
+  //   const modal = galaxieModals[index]
+  //   if (!modal) return
 
-    const circle = item.querySelector('.galaxies-component_circle') as HTMLDivElement
+  //   const circle = item.querySelector('.galaxies-component_circle') as HTMLDivElement
 
-    const closeButton = modal.querySelector('button.invisble-button') as HTMLButtonElement
-    closeButton.addEventListener('click', () => {
-      modal.style.display = 'none'
-      closeModal()
-    })
+  //   const closeButton = modal.querySelector('button.invisble-button') as HTMLButtonElement
+  //   closeButton.addEventListener('click', () => {
+  //     modal.style.display = 'none'
+  //     closeModal()
+  //   })
 
-    circle.addEventListener('click', () => {
-      modal.style.display = 'block'
-      openModal(modal, '#FFFEF5')
-    })
-  })
+  //   circle.addEventListener('click', () => {
+  //     modal.style.display = 'block'
+  //     openModal(modal, '#FFFEF5')
+  //   })
+  // })
 
   const animation = (item: HTMLElement, circle: HTMLElement) => {
     const path = item.querySelector('.galaxies-component_path path') as SVGPathElement
